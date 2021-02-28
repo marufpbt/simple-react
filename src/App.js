@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Data from './fakeData/Data.json';
-import Player from './components/Player/Player';
+import Player from './components/Player/Team/Player/Player';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Team from './components/Player/Team/Team';
+import Team from './components/Team/Team';
 
 function App() {
   const [players, setPlayers] = useState([]);

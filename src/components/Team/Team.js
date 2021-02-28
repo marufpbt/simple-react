@@ -9,9 +9,9 @@ const Team = (props) => {
 				<h2>Total Players: {team.length}</h2>
 				<h3>Total Budget: ϵ {totalSalary} million</h3>
 			</div>
-			<ul>
+			<ul style={{listStyleType:'decimal', fontSize:'20px'}}>
 				{
-					team.map(data => <li><h5>{data.name} , Salary: ϵ {data.salary} million</h5></li>)
+					team.map(data => <li style={{background:'yellow',margin:'10px 0'}}><h5>{data.name} , Salary: ϵ {data.salary} million</h5></li>)
 				}
 			</ul>
 		</div>

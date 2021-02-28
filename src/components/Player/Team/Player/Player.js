@@ -1,5 +1,8 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
 const Player = (props) => {
 	const { name, image, salary } = props.player;
@@ -13,7 +16,7 @@ const Player = (props) => {
 					<Card.Text>
 						<h5>Salary: ϵ {salary} million</h5>
 					</Card.Text>
-					<Button variant="primary" onClick={() => handleAddPlayer(props.player)}>Add Player</Button>
+					<Button variant="primary" onClick={() => handleAddPlayer(props.player)}> <FontAwesomeIcon icon={faUserPlus} /> Add Player</Button>
 				</Card.Body>
 			</Card>
 		</div>
