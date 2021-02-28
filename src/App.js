@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Data from './fakeData/Data.json';
+import Player from './components/Player/Player';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Team from './components/Player/Team/Team';
 
 function App() {
+  const [players, setPlayers] = useState([]);
+  useEffect(() => {
+    setPlayers(Data)
+  }, []);
+  const [team, setTeam] = useState([]);
+  const handleAddPlayer = (player) => {
+    const newTeam = [...team, player];
+    setTeam(newTeam);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: "flex", margin: '20px' }}>
+      <div className="player-container">
+        {
+          players.map(player => <Player key={player.id} handleAddPlayer={handleAddPlayer} player={player}></Player>)
+        }
+      </div>
+      <div className="team-container" style={{margin:'30px auto'}}>
+        <Team team={team}></Team>
+      </div>
     </div>
   );
 }
